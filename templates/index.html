@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Mail Detection</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Spam Mail Detection</h2>
+        <form id="spamForm">
+            <label for="message">Enter a message:</label><br>
+            <textarea id="message" rows="4" cols="50" name="message" placeholder="Type your message here..."></textarea><br><br>
+            <button type="button" onclick="sendPrediction()">Check</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        async function sendPrediction() {
+            const message = document.getElementById('message').value;
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: message })
+            });
+            const result = await response.json();
+            document.getElementById('result').innerText = result.prediction || result.error;
+        }
+    </script>
+</body>
+</html>

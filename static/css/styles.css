@@ -1,0 +1,113 @@
+/* Background Gradient Animation */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #a1c4fd, #c2e9fb, #667eea);
+    background-size: 400% 400%;
+    animation: backgroundShift 12s ease infinite;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #f5f7fa);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Header Styling with Vibrant Gradient Text */
+h2 {
+    background: linear-gradient(90deg, #ff512f, #dd2476, #24c6dc, #a1c4fd, #667eea, #e1eec3, #f05053, #ff512f);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.8em;
+    animation: textGradientShift 6s ease infinite;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    resize: vertical;
+    transition: border-color 0.3s;
+    background: linear-gradient(135deg, #eef2f3, #ffffff);
+}
+
+textarea:focus {
+    border-color: #ff512f;
+    outline: none;
+}
+
+/* Button Styling with Animated Full Color Gradient */
+button {
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #7f00ff, #1fddff, #00ff87);
+    background-size: 300% 300%;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: buttonBackgroundShift 5s ease-in-out infinite;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Result Text with Colorful Gradient Animation */
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #667eea, #24c6dc, #8e2de2, #4a00e0);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: textColorShift 6s linear infinite;
+}
+
+/* Keyframes for Background Animation */
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Keyframes for Button Background Shift */
+@keyframes buttonBackgroundShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Keyframes for Fade-In Effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Keyframes for Vibrant Text Gradient Shift */
+@keyframes textGradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Keyframes for Result Text Gradient Shift */
+@keyframes textColorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
